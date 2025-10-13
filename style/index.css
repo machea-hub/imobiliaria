@@ -243,6 +243,86 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ... Todo o CSS anterior permanece igual ... */
+
+/* Card de Resultado do Cálculo */
+.resultado-card {
+  display: none; /* Escondido inicialmente */
+  background: linear-gradient(135deg, #b68d5f, #94734d); /* Gradiente marrom para destaque */
+  color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.5s ease-out; /* Animação de entrada */
+  max-width: 100%;
+}
+
+.resultado-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.valor-principal {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c2c2e; /* Dourado para o valor, como no hero */
+  margin: 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para impacto */
+}
+
+.resultado-card p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.btn-detalhes,
+.btn-reset {
+  background-color: #caaf94;
+  color: #2c2c2e;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.btn-detalhes:hover,
+.btn-reset:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-detalhes {
+  background-color: #caaf94; /* Dourado para ação principal */
+  color: #2c2c2e;
+}
+
+.btn-reset {
+  background-color: #94734d; /* Marrom escuro para reset */
+  color: #fff;
+}
+
+/* Animação de Entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsivo - Ajustes para Manter 50/50 no Desktop e Adaptar no Mobile */
 @media (max-width: 768px) {
   header {
