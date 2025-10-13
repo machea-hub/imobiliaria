@@ -3,60 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imobiliaria</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Imobiliária Laureano e Mazza</title>
   </head>
   <body>
     <header>
-      <img src="./assets/logo-imobiliaria.png" alt="logo-imobiliaria" />
+      <img src="./assets/logo-imobiliaria.png" alt="Logo da Imobiliária Laureano e Mazza" class="logo"/>
       <nav>
-        <ul>
-          <li>Inicio</li>
-          <li>Calculadora</li>
-          <li>Contato</li>
+        <ul class="menu">
+          <li><a href="#um">Início</a></li>
+          <li><a href="#calculadora">Calculadora</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section id="um">
-        <h1>Seu novo imóvel está <span>aqui</span></h1>
-        <p>Calcule o valor do seu imóvel</p>
-        <button>Saiba mais</button>
-        <img src="./assets/casa.png" alt="house-img" />
+        <div class="hero-content">
+          <h1>Seu novo imóvel <br> está <span>aqui</span></h1>
+          <p>Calcule o valor do seu imóvel</p>
+          <button class="btn-primary"><a href="#calculadora">Saiba mais</a></button>
+        </div>
+        <img src="./assets/casa.png" alt="Imagem de uma casa moderna" class="hero-image" />
       </section>
       <section id="dois">
-        <img src="./assets/cifrão-img.png" alt="cifrão-img" />
-        <h2>Consulte o <span>valor</span> do imóvel</h2>
-        <div id="calculadora">
-            <input type="text" placeholder="E-MAIL"/>
-            <input type="text" placeholder="TIPO DO IMÓVEL"/>
-            <input type="text" placeholder="ENDEREÇO"/>
-            <input type="text" placeholder="ÁREA (M²)"/>
-            <input type="text" placeholder="QUARTOS"/>
-            <input type="text" placeholder="BANHEIROS"/>
-            <input type="text" placeholder="VAGAS"/>
-            <button>CALCULAR</button>
+        <div class="cta">
+            <img src="./assets/cifrão-img.png" alt="Ícone de cifrão representando valor" class="dollar-icon" />
+            <h2>Consulte o <span>valor</span> <br> do imóvel</h2>
+        </div>
+        <div id="calculadora" class="calculator">
+          <input type="email" placeholder="E-MAIL" required />
+          <input type="text" placeholder="TIPO DO IMÓVEL (ex: Casa, Apartamento)" />
+          <input type="text" placeholder="ENDEREÇO" />
+          <input type="number" placeholder="ÁREA (M²)" min="1" />
+          <input type="number" placeholder="QUARTOS" min="0" />
+          <input type="number" placeholder="BANHEIROS" min="0" />
+          <input type="number" placeholder="VAGAS (garagem)" min="0" />
+          <button class="btn-secondary">CALCULAR</button>
         </div>
       </section>
     </main>
-    <footer>
-        <div>
-            <a href="">
-                <img src="" alt="">
-                <p>LaureanoeMazzaimob</p>
-            </a>
-            <a href="">
-                <img src="" alt="">
-                <p>Laureanoemazzaimob</p>
-            </a>
-            <a href="">
-                <img src="" alt="">
-                <p>https://lm-imob.imb.br</p>
-            </a>
-        </div>
-        <div>
-            <h2>Horário de funcionamento</h2>
-            <p>Seg à sex: 9h às 18h <br> Sábados: 9h às 15h</p>
-        </div>
+    <footer id="contato">
+      <div class="footer-social">
+        <a href="https://instagram.com/laureanoemazzaimob" target="_blank">
+          <img src="./assets/insta.png" alt="Instagram" />
+          <p>@laureanoemazzaimob</p>
+        </a>
+        <a href="https://www.youtube.com/@LaureanoeMazzaimob" target="_blank">
+          <img src="./assets/youtube.png" alt="youtube" />
+          <p>Laureano e Mazza Imob</p>
+        </a>
+        <a href="https://lm-imob.imb.br" target="_blank">
+          <img src="./assets/site.png" alt="Site oficial" />
+          <p>https://lm-imob.imb.br</p>
+        </a>
+      </div>
+      <div class="footer-hours">
+        <h2>Horário de funcionamento</h2>
+        <p>Seg à sex: 9h às 18h <br> Sábados: 9h às 15h</p>
+      </div>
     </footer>
   </body>
 </html>
