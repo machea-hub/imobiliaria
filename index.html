@@ -35,24 +35,15 @@
           <img src="./assets/cifrão-img.png" alt="Ícone de cifrão representando valor" class="dollar-icon" />
           <h2>Consulte o <span>valor</span> do imóvel</h2>
         </div>
-        <div id="calculadora" class="calculator">
-          <input type="email" id="email" placeholder="E-MAIL" required />
-          <input type="text" id="tipo" placeholder="TIPO DO IMÓVEL (ex: Casa, Apartamento)" />
-          <input type="text" id="endereco" placeholder="ENDEREÇO" />
-          <input type="number" id="area" placeholder="ÁREA (M²)" min="1" />
-          <input type="number" id="quartos" placeholder="QUARTOS" min="0" />
-          <input type="number" id="banheiros" placeholder="BANHEIROS" min="0" />
-          <input type="number" id="vagas" placeholder="VAGAS (garagem)" min="0" />
-          <button class="btn-secondary" id="calcular-btn">CALCULAR</button>
-          
-          <!-- Novo: Container para Exibir o Resultado (Escondido Inicialmente) -->
-          <div id="resultado" class="resultado-card">
-            <h3>Valor Estimado do Seu Imóvel</h3>
-            <div class="valor-principal">R$ <span id="valor-calculado">0</span></div>
-            <p id="detalhes-resumo">Baseado nos dados informados. Consulte-nos para uma avaliação precisa!</p>
-            <button class="btn-detalhes" id="btn-detalhes">Consultar Detalhes</button>
-            <button class="btn-reset" id="btn-reset">Novo Cálculo</button>
-          </div>
+        
+        <!-- Script adicionado no lugar da div id="calculadora" -->
+        <div>
+            <script
+              type="module"
+              form-code="3cf18d1f-2773-4ff2-9bb4-432b378852b1"
+              src="https://cdn.valorimovel.com.br/widget.bundle.es.js"
+              variant="floating">
+            </script>
         </div>
       </section>
     </main>
@@ -76,107 +67,5 @@
         <p>Seg à sex: 9h às 18h <br> Sábados: 9h às 15h</p>
       </div>
     </footer>
-
-    <!-- Script do Widget (Opcional: Para "Consultar Detalhes") -->
-    <script 
-      type="module"
-      form-code="3cf18d1f-2773-4ff2-9bb4-432b378852b1" 
-      src="https://cdn.valorimovel.com.br/widget.bundle.es.js" 
-      variant="floating">
-    </script>
-
-    <!-- JavaScript: Cálculo e Exibição do Valor na Tela -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const calcularBtn = document.getElementById('calcular-btn');
-        const resultado = document.getElementById('resultado');
-        const valorCalculadoEl = document.getElementById('valor-calculado');
-        const detalhesResumo = document.getElementById('detalhes-resumo');
-        const btnDetalhes = document.getElementById('btn-detalhes');
-        const btnReset = document.getElementById('btn-reset');
-        const inputs = {
-          email: document.getElementById('email'),
-          tipo: document.getElementById('tipo'),
-          endereco: document.getElementById('endereco'),
-          area: document.getElementById('area'),
-          quartos: document.getElementById('quartos'),
-          banheiros: document.getElementById('banheiros'),
-          vagas: document.getElementById('vagas')
-        };
-
-        // Função para Calcular Valor Estimado (Fórmula Simples e Realista)
-        function calcularValor(formData) {
-          const area = parseInt(formData.area) || 0;
-          const quartos = parseInt(formData.quartos) || 0;
-          const banheiros = parseInt(formData.banheiros) || 0;
-          const vagas = parseInt(formData.vagas) || 0;
-          let precoPorM2 = 6000; // Base: R$6.000/m² (média Brasil; ajuste por região)
-
-          // Ajustes por Tipo (exemplo: Casa mais cara que Apê)
-          if (formData.tipo.toLowerCase().includes('casa')) precoPorM2 += 2000;
-          else if (formData.tipo.toLowerCase().includes('apartamento')) precoPorM2 -= 1000;
-
-          // Bônus por Quartos/Banheiros/Vagas
-          const bonusQuartos = quartos * 15000;
-          const bonusBanheiros = banheiros * 10000;
-          const bonusVagas = vagas * 8000;
-
-          const valorTotal = (area * precoPorM2) + bonusQuartos + bonusBanheiros + bonusVagas;
-          return Math.round(valorTotal); // Arredonda para inteiro
-        }
-
-        // Evento do Botão Calcular
-        calcularBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          // Validação
-          if (!inputs.email.value || !inputs.area.value) {
-            alert('Por favor, preencha E-MAIL e ÁREA para calcular.');
-            return;
-          }
-
-          const formData = {
-            email: inputs.email.value,
-            tipo: inputs.tipo.value,
-            endereco: inputs.endereco.value,
-            area: inputs.area.value,
-            quartos: inputs.quartos.value,
-            banheiros: inputs.banheiros.value,
-            vagas: inputs.vagas.value
-          };
-
-          // Calcula o Valor
-          const valor = calcularValor(formData);
-
-          // Exibe na Tela
-          valorCalculadoEl.textContent = valor.toLocaleString('pt-BR');
-          detalhesResumo.textContent = `Imóvel: ${formData.tipo || 'Não informado'} | Endereço: ${formData.endereco || 'Não informado'} | Área: ${formData.area} m² | Quartos: ${formData.quartos || 0}`;
-          resultado.style.display = 'block'; // Mostra o card
-          resultado.scrollIntoView({ behavior: 'smooth' }); // Scroll suave para o resultado
-
-          // Opcional: Log para debug ou envio para analytics
-          console.log('Valor calculado:', valor, 'Dados:', formData);
-
-          // Limpa inputs (opcional)
-          // Object.values(inputs).forEach(input => input.value = '');
-        });
-
-        // Botão "Consultar Detalhes" (Abre Widget Opcional)
-        btnDetalhes.addEventListener('click', function() {
-          if (window.ValorImovelWidget && typeof window.ValorImovelWidget.open === 'function') {
-            window.ValorImovelWidget.open('floating');
-          } else {
-            alert('Para uma avaliação detalhada, entre em contato conosco!');
-          }
-        });
-
-        // Botão "Novo Cálculo" (Reset)
-        btnReset.addEventListener('click', function() {
-          resultado.style.display = 'none';
-          Object.values(inputs).forEach(input => input.value = '');
-          calcularBtn.focus(); // Foco de volta no botão
-        });
-      });
-    </script>
   </body>
 </html>
