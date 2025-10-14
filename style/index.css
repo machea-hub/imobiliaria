@@ -46,7 +46,7 @@ header {
 
 .menu li a {
   font-weight: 500;
-  color: #2c2c2e; /* Cor base para contraste no header bege */
+  color: #2c2c2e; 
   transition: color 0.3s;
 }
 
@@ -54,7 +54,7 @@ header {
   opacity: .8;
 }
 
-/* Seção Hero (#um) - Divisão 50/50 e Mesma Altura */
+
 #um {
   display: flex;
   align-items: stretch;
@@ -114,7 +114,7 @@ header {
 }
 
 
-/* Seção Calculadora (#dois) - Otimizações para Flex */
+
 #dois {
   padding: 25px 5% 30px;
   display: flex;
@@ -147,47 +147,7 @@ header {
   color: #94734d;
 }
 
-.calculator {
-  background: #b68d5f;
-  padding: 30px;
-  border-radius: 10px;
-  width: 500px;
-  display: grid;
-  gap: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
 
-.calculator input {
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  background-color: #fff;
-  transition: border-color 0.3s;
-}
-
-.calculator input:focus {
-  outline: none;
-  border: 2px solid #caaf94;
-}
-
-.btn-secondary {
-  background-color: #caaf94;
-  color: #fff;
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn-secondary:hover {
-  opacity: .8;
-}
-
-/* Footer (#contato) */
 footer {
   background-color: #94734d;
   padding: 3rem 5% 1rem;
@@ -238,186 +198,8 @@ footer {
   opacity: 0.8;
 }
 
-/* Navegação Suave */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* ... Todo o CSS anterior permanece igual ... */
-
-/* Card de Resultado do Cálculo */
-.resultado-card {
-  display: none; /* Escondido inicialmente */
-  background: linear-gradient(135deg, #b68d5f, #94734d); /* Gradiente marrom para destaque */
-  color: #fff;
-  padding: 2rem;
-  border-radius: 15px;
-  margin-top: 2rem;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: fadeInUp 0.5s ease-out; /* Animação de entrada */
-  max-width: 100%;
-}
-
-.resultado-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.valor-principal {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #2c2c2e; /* Dourado para o valor, como no hero */
-  margin: 1rem 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para impacto */
-}
-
-.resultado-card p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
-.btn-detalhes,
-.btn-reset {
-  background-color: #caaf94;
-  color: #2c2c2e;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin: 0 0.5rem;
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.btn-detalhes:hover,
-.btn-reset:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-detalhes {
-  background-color: #caaf94; /* Dourado para ação principal */
-  color: #2c2c2e;
-}
-
-.btn-reset {
-  background-color: #94734d; /* Marrom escuro para reset */
-  color: #fff;
-}
-
-/* Animação de Entrada */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsivo - Ajustes para Manter 50/50 no Desktop e Adaptar no Mobile */
-@media (max-width: 768px) {
-  header {
-    padding: 1rem 3%;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .menu {
-    gap: 1rem;
-  }
-
-  #um {
-    flex-direction: column; /* Mudança: Empilha no mobile */
-    align-items: center; /* Centraliza */
-    text-align: center;
-    height: auto; /* Mudança: Altura natural no mobile, sem stretch forçado */
-    padding: 150px 3% 50px;
-  }
-
-  .hero-content {
-    width: 100%; /* Mudança: Ocupa toda largura no mobile */
-    padding-right: 0;
-    justify-content: flex-start; /* Texto no topo no mobile */
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-image {
-    width: 100%; /* Mudança: Ocupa toda largura no mobile */
-    height: auto; /* Mudança: Altura natural (não stretch) para evitar distorções */
-    transform: none; /* Removido: Sem overflow no mobile */
-    margin-top: 1rem;
-  }
-
-  #dois {
-    flex-direction: column;
-    padding: 60px 3%;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .cta {
-    order: 1;
-  }
-
-  #dois h2 {
-    font-size: 3rem;
-  }
-
-  .dollar-icon {
-    width: 200px;
-  }
-
-  .calculator {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .footer-social a {
-    justify-content: center;
-  }
-
-  .footer-hours {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .btn-primary, .btn-secondary {
-    padding: 0.8rem 1.5rem;
-  }
-
-  .hero-image {
-    max-width: 100%;
-  }
-
-  .calculator {
-    padding: 20px;
-  }
-
-  .dollar-icon {
-    width: 150px;
-  }
-}
