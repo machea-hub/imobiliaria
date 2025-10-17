@@ -54,7 +54,6 @@ header {
   opacity: .8;
 }
 
-
 #um {
   display: flex;
   align-items: stretch;
@@ -108,13 +107,7 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.hero-image {
-  width: 800px;
-  height: auto;
-}
-
-
-
+/* Seção #dois */
 #dois {
   padding: 25px 5% 30px;
   display: flex;
@@ -146,7 +139,6 @@ header {
 #dois h2 span {
   color: #94734d;
 }
-
 
 footer {
   background-color: #94734d;
@@ -198,8 +190,176 @@ footer {
   opacity: 0.8;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
+/* Media Queries para Responsividade em Cascata */
+@media (max-width: 1024px) {
+  /* Ajustes para tablets e menores */
+  header {
+    flex-direction: column; /* Empilhar header verticalmente */
+    align-items: center; /* Centralizar itens */
+    padding: 1rem;
+  }
+
+  .menu {
+    flex-direction: column; /* Empilhar itens do menu */
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  #um {
+    flex-direction: column; /* Empilhar elementos de #um */
+    height: auto;
+    padding: 80px 5% 25px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #dois {
+    flex-direction: column; /* Empilhar elementos de #dois */
+    text-align: center;
+    padding: 20px 5%;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .dollar-icon {
+    width: 250px;
+  }
+
+  #dois h2 {
+    font-size: 3rem;
+  }
+
+  footer {
+    grid-template-columns: 1fr; /* Uma coluna para empilhar */
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-hours {
+    text-align: center;
+  }
+
+  .footer-hours h2, .footer-hours p {
+    font-size: 1rem;
+  }
+
+  element.style {
+    position: relative;
+    width: auto;
+    height: 615px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajustes específicos para mobile (mais empilhamento) */
+  .menu{
+    display: none;
+  }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  .menu {
+    gap: 0.5rem;
+  }
+
+  #um {
+    padding: 60px 5% 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  #dois {
+    padding: 15px 5%;
+  }
+
+  #dois h2 {
+    font-size: 2rem;
+  }
+
+  .dollar-icon {
+    width: 150px;
+  }
+
+  footer {
+    padding: 2rem 5%;
+    gap: 1rem;
+  }
+
+  element.style {
+    position: relative;
+    width: auto;
+    height: 615px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para telas muito pequenas (ex.: smartphones menores) */
+  .menu{
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1rem;
+    font-size: 14px;
+  }
+
+  #dois h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-social a {
+    flex-direction: column; /* Empilhar ícones e texto verticalmente */
+    align-items: center;
+  }
+
+  .footer-social img {
+    width: 25px;
+    height: 25px;
+  }
+
+  element.style {
+    position: relative;
+    width: auto;
+    height: 615px;
+  }
+}

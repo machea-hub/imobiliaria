@@ -3,16 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./assets/logo-imobiliaria.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/logo-imobiliaria.png"
+      type="image/x-icon"
+    />
     <title>Imobiliária Laureano e Mazza</title>
   </head>
   <body>
     <header>
-      <img src="./assets/logo-imobiliaria.png" alt="Logo da Imobiliária Laureano e Mazza" class="logo"/>
+      <img
+        src="./assets/logo-imobiliaria.png"
+        alt="Logo da Imobiliária Laureano e Mazza"
+        class="logo"
+      />
       <nav>
         <ul class="menu">
           <li><a href="#um">Início</a></li>
@@ -24,26 +35,39 @@
     <main>
       <section id="um">
         <div class="hero-content">
-          <h1>Seu novo imóvel <br> está <span>aqui</span></h1>
+          <h1>
+            Seu novo imóvel <br />
+            está <span>aqui</span>
+          </h1>
           <p>Calcule o valor do seu imóvel</p>
-          <button class="btn-primary">Saiba mais</button>
+          <button class="btn-primary">
+            <a href="#calculadora">Saiba mais</a>
+          </button>
         </div>
-        <img src="./assets/casa.png" alt="Imagem de uma casa moderna" class="hero-image" />
+        <img
+          src="./assets/house-image.png"
+          alt="Imagem de uma casa moderna"
+          class="house-image"
+        />
       </section>
       <section id="dois">
         <div class="cta">
-          <img src="./assets/cifrão-img.png" alt="Ícone de cifrão representando valor" class="dollar-icon" />
+          <img
+            src="./assets/cifrão-img.png"
+            alt="Ícone de cifrão representando valor"
+            class="dollar-icon"
+          />
           <h2>Consulte o <span>valor</span> do imóvel</h2>
+          <button class="btn-primary"><a href="https://wa.link/mfv35k" target="_blank">Converse conosco</a></button>
         </div>
-        
-        <!-- Script adicionado no lugar da div id="calculadora" -->
-        <div>
-            <script
-              type="module"
-              form-code="3cf18d1f-2773-4ff2-9bb4-432b378852b1"
-              src="https://cdn.valorimovel.com.br/widget.bundle.es.js"
-              variant="floating">
-            </script>
+
+        <div id="calculadora">
+          <script
+            type="module"
+            form-code="3cf18d1f-2773-4ff2-9bb4-432b378852b1"
+            src="https://cdn.valorimovel.com.br/widget.bundle.es.js"
+            variant="floating"
+          ></script>
         </div>
       </section>
     </main>
@@ -55,7 +79,7 @@
         </a>
         <a href="https://www.youtube.com/@LaureanoeMazzaimob" target="_blank">
           <img src="./assets/youtube.png" alt="youtube" />
-          <p>Laureano e Mazza Imob</p>
+          <p>LaureanoeMazzaimob</p>
         </a>
         <a href="https://lm-imob.imb.br" target="_blank">
           <img src="./assets/site.png" alt="Site oficial" />
@@ -63,8 +87,13 @@
         </a>
       </div>
       <div class="footer-hours">
-        <h2>Horário de funcionamento</h2>
-        <p>Seg à sex: 9h às 18h <br> Sábados: 9h às 15h</p>
+        <h3>Horário de funcionamento</h2>
+        <p>
+          Seg à sex: 9h às 18h <br />
+          Sábados: 9h às 15h
+        </p>
+        <br>
+        <p>Av. Marques de São Vicente, 576 - <br>cj 2101 - Barra Funda, São Paulo/SP</p>
       </div>
     </footer>
   </body>
